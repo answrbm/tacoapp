@@ -19,6 +19,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/design", "/orders").hasRole("USER")
                         .requestMatchers("/", "/**").permitAll())
+                .formLogin(formLogin -> formLogin.loginPage("/login"))
                 .build();
     }
 
